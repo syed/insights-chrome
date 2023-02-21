@@ -145,6 +145,12 @@ const ScalprumRoot = memo(
                   loadScripts: [],
                 };
               }
+              if (manifest.name === 'quay-ui-plugin') {
+                return {
+                  ...manifest,
+                  loadScripts: manifest.loadScripts.map((path) => `/apps/quay/${path}`),
+                };
+              }
               return {
                 ...manifest,
                 loadScripts: manifest.loadScripts ?? ['plugin-entry.js'],

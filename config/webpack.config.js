@@ -157,6 +157,12 @@ const commonConfig = ({ dev }) => {
             '/config': {
               host: `http://localhost:${process.env.CONFIG_PORT}`,
             },
+            '/apps/quay': {
+              host: 'http://localhost:8003',
+            },
+            '/beta/apps/quay': {
+              host: 'http://localhost:8003',
+            },
           }),
         },
       }),
